@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta name="author" content="Luka Cvrk (cssMoban.com.com)" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
+	<title>Steven Tech Blog</title>
+</head>
+<body id="home">
+	<header>
+		<div id="logo">
+			<h1><a href="." title="Home">Steven Tech Blog</a></h1>
+			<p>Share and Communicate</p>
+		</div>
+		<nav>
+			<ul>
+				<li><a class="current" href="index.html" accesskey="h"><span class="akey">H</span>ome</a></li>
+				<li><a href="tech.html" accesskey="a"><span class="akey">T</span>ech</a></li>
+				<li><a href="#" accesskey="b"><span class="akey">B</span>ook</a></li>
+			</ul>
+		</nav>
+	</header>
+	<article>
+		<div id="left">
+			<h2>Mac 上的PHP, Mysql, Apache 平台搭建</h2>
+			<p>
+				<h3>准备工作</h3>
+				<p>我们安装自己的php的时候为了配置系统使用指定的php版本，需要修改bash的配置文件，但是我们的bash可能没有.bashrc文件，这时需要自己生成一个。
+					但是我的建议是我们直接食用zsh，而不是bash，zsh的安装非常方便，可以直接参考<a href="http://leeiio.me/bash-to-zsh-for-mac/">博客</a>
+				</p>
+				<h3>安装</h3>
+				<p>具体的安装过程，有位大神已经写的很详细了，大家可以参考他的<a href="http://yansu.org/2013/12/11/lamp-in-mac.html">博客</a>。需要注意的就是，
+				我们安装的php版本跟博客中的可能不同，注意使用自己的php module，注意高亮部分 LoadModule php5_module /usr/local/Cellar/<mark>php55/5.5.8/</mark>libexec/apache2/libphp5.so 	
+				</p>
+				<h3>可能遇到的问题</h3>
+				<p>
+					<ol>
+						<li>找不到bash的配置文件，如.bashrc。建议使用zsh，否则就自己创建一个吧</li>
+					</ol>	
+				</p>
+			</p>
+		</div>	
+		<aside>
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://github.com/StevenXiaoZhao">My Github</a></li>
+				<li><a href="mailto:xiaofeizhao@outlook.com">Contacts</a></li>
+			</ul>
+			<div id="tagcloud">
+				<p>
+					<span style="font-size: 1.3em"><a href="#">Mac</a></span>
+					<span style="font-size: .9em"><a href="#">php</a></span>
+					<span style="font-size: 1.6em"><a href="#">mysql</a></span>
+					<span style="font-size: 1.4em"><a href="#">apache</a></span>
+				</p>
+			</div>
+		</aside>
+
+		<footer>
+			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Media</a> &middot; <a href="#">References</a> &middot; <a href="#">Consulting</a> &middot; <a href="#">Contact</a></p>
+			<p><strong>Network:</strong> <a href="#">Network site #1</a> &middot;  <a href="#">Network site #2</a> &middot;  <a href="#">Network site #3</a> &middot;  <a href="#">Network site #4</a></p>
+		</footer>
+	</article>		
+
+</body>
+</html>

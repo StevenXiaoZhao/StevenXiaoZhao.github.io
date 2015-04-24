@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta name="author" content="Luka Cvrk (cssMoban.com.com)" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
+	<title>Steven Tech Blog</title>
+</head>
+<body id="home">
+	<header>
+		<div id="logo">
+			<h1><a href="." title="Home">Steven Tech Blog</a></h1>
+			<p>Share and Communicate</p>
+		</div>
+		<nav>
+			<ul>
+				<li><a class="current" href="index.html" accesskey="h"><span class="akey">H</span>ome</a></li>
+				<li><a href="tech.html" accesskey="a"><span class="akey">T</span>ech</a></li>
+				<li><a href="#" accesskey="b"><span class="akey">B</span>ook</a></li>
+			</ul>
+		</nav>
+	</header>
+	<article>
+		<div id="left">
+			<h2>Mac 上的laravel</h2>
+			<p>
+				<h3>准备工作</h3>
+					<p>请确保php相关的都已经安装好了，否则请参考文章：<a href="lamp.html">Mac 上的PHP, Mysql, Apache 平台搭建 LAMP</a>
+					</p>
+				<h3>安装</h3>
+					<p>具体的安装过程，可以参考<a href="http://www.golaravel.com/post/laravel-5-getting-started-part-1/">博客</a>。
+					<p>需要注意的就是，为了route 功能可以work, 你需要apache启用rewrite功能，请修改/etc/apache2/httpd.conf</p>
+					<p>LoadModule rewrite_module modules/mod_rewrite.so前面的#去掉</p>
+					<p>DocumentRoot所属的Directory中的AllowOverride None 替换为 AllowOverride All</p>
+				<h3>可能遇到的问题</h3>
+					<p>
+						<ol>
+							<li>localhost/home路由有问题，根本找不到，这时注意启用apache的rewrite功能</li>
+							<li>permission 问题，注意给文件夹777权限</li>
+							<li>当你启用了AllowOverride All功能以后，可能发现出现了internal Error 500。这个时候回过头来在你的laravel目录下面寻找.htaccess文件（别说你找不到），按照<a href="http://laravel.com/docs/5.0/installation">官网</a>修改。有的时候更让人抓狂的是这样还不好使，那么就用下面的内容替换.htaccess文件吧
+							<p>								<p>RewriteEngine On</p>
+								<br>
+								<p>RewriteCond %{REQUEST_FILENAME} !-d</p>
+								<p>RewriteCond %{REQUEST_FILENAME} !-f</p>
+								<p>RewriteRule ^ index.php [L]</p>
+							</p>
+							</li>
+						</ol>	
+					</p>
+			</p>
+		</div>	
+		<aside>
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://github.com/StevenXiaoZhao">My Github</a></li>
+				<li><a href="mailto:xiaofeizhao@outlook.com">Contacts</a></li>
+			</ul>
+			<div id="tagcloud">
+				<p>
+					<span style="font-size: 1.3em"><a href="#">Mac</a></span>
+					<span style="font-size: .9em"><a href="#">php</a></span>
+					<span style="font-size: 1.6em"><a href="#">laravel</a></span>
+					<span style="font-size: 1.4em"><a href="#">apache</a></span>
+				</p>
+			</div>
+		</aside>
+
+		<footer>
+			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Media</a> &middot; <a href="#">References</a> &middot; <a href="#">Consulting</a> &middot; <a href="#">Contact</a></p>
+			<p><strong>Network:</strong> <a href="#">Network site #1</a> &middot;  <a href="#">Network site #2</a> &middot;  <a href="#">Network site #3</a> &middot;  <a href="#">Network site #4</a></p>
+		</footer>
+	</article>		
+
+</body>
+</html>

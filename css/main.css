@@ -34,6 +34,7 @@ nav li a:hover, nav li a.current { background: url(../images/barbg.gif) no-repea
 /* main content */
 #left { float: left; width: 570px; margin: 0 0 20px 0; }
 	#left h2 { float: left; font: 2.1em "Trebuchet MS", Arial; background: url(../images/h2bg.gif) repeat-x bottom; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }
+	#left h3 { float: left; font: 1.8em "Trebuchet MS", Arial; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }
 	#left h2 a { color:#121212; text-decoration:none; border: 0; }
 	#left p { clear: both; margin: 5px 0 20px 0; font-size:110%; line-height:21px; }
 	
