@@ -3,24 +3,18 @@
 <head>
 	<meta name="author" content="Luka Cvrk (cssMoban.com.com)" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, projection" />
 	<title>Steven Tech Blog</title>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+	<script>
+        $(document).ready(function(){
+          $("header").load("_tech_header.html");
+          $("#links").load("_tech_links.html");
+        });
+    </script>
 </head>
 <body id="home">
-	<header>
-		<div id="logo">
-			<h1><a href="." title="Home">Steven Tech Blog</a></h1>
-			<p>Share and Communicate</p>
-		</div>
-		<nav>
-			<ul>
-				<li><a class="current" href="index.html" accesskey="h"><span class="akey">H</span>ome</a></li>
-				<li><a href="tech.html" accesskey="a"><span class="akey">T</span>ech</a></li>
-				<li><a href="#" accesskey="b"><span class="akey">B</span>ook</a></li>
-				<li><a href="share.html" accesskey="b"><span class="akey">S</span>hare</a></li>
-			</ul>
-		</nav>
-	</header>
+	<header></header>
 	<article>
 		<div id="left">
 			<h2>Mac 上的laravel</h2>
@@ -46,16 +40,12 @@
 								<p>RewriteRule ^ index.php [L]</p>
 							</p>
 							</li>
-						</ol>	
+						</ol>
 					</p>
 			</p>
-		</div>	
+		</div>
 		<aside>
-			<h2>Links</h2>
-			<ul>
-				<li><a href="https://github.com/StevenXiaoZhao">My Github</a></li>
-				<li><a href="mailto:xiaofeizhao@outlook.com">Contacts</a></li>
-			</ul>
+			<div id="links"></div>
 			<div id="tagcloud">
 				<p>
 					<span style="font-size: 1.3em"><a href="#">Mac</a></span>
@@ -69,7 +59,7 @@
 		<footer>
 			<p><strong>As A Learner</strong></p>
 		</footer>
-	</article>		
+	</article>
 
 </body>
 </html>
