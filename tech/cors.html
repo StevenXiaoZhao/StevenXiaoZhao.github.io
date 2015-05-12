@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta name="author" content="Luka Cvrk (cssMoban.com.com)" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, projection" />
+	<title>Steven Tech Blog</title>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+	<script>
+        $(document).ready(function(){
+          $("header").load("header.html");
+          $("#links").load("links.html");
+        });
+    </script>
+</head>
+<body id="home">
+	<header></header>
+	<article>
+		<div id="left">
+			<h2>Enable cors</h2>
+			<p>
+				Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain communication from the browser. By building on top of the XMLHttpRequest object, CORS allows developers to work with the same idioms as same-domain requests. cors访问其实就是一个站点请求另外一个站点的资源数据。前后端分开开发就希望能将前后端放在两个project里面，这个时候最好能够支持cors访问
+			</p>
+			<h3>做法</h3>
+			<p>
+				<h4><big>前端</big></h4>
+				<p>在javascript中添加下面两行：
+<pre>
+xhrFields:{
+         withCredentials:true
+          },
+crossDomain: true,
+</pre>
+				</p>
+			</p>
+			<p>
+				<h4><big>后端</big></h4>
+				<p>
+					后端需要服务器接受跨域的request，所以我们需要设置两个地方
+					<ul>
+						<li>
+							Access-Control-Allow-Origin "http://192.168......"  //就是允许这个站点跨域访问
+						</li>
+						<li>
+  							Access-Control-Allow-Credentials "true" //这个是允许带credentials，和 前端的设置保持一致
+						</li>
+					</ul>
+					<p>需要注意的是，如果使用的是laravel，可以将上面的修改放在.htaccess 文件里面，例如
+<pre>
+	&lt;IfModule mod_headers.c&gt;
+	  Header set Access-Control-Allow-Origin "http://192.168.3.102:8800"
+	  Header set Access-Control-Allow-Credentials "true"
+	&lt;IfModule&gt;
+</pre>
+					</p>
+				</p>
+			</p>
+		<p>
+			<h3>相关连接</h3>
+			<p>
+			<ul>
+				<li>
+					<a href="http://www.html5rocks.com/en/tutorials/cors/#toc-adding-cors-support-to-the-server">HTML5 Using CORS</a>
+				</li>
+				<li>
+					<a href="http://enable-cors.org/server_apache.html">CORS on Apache</a>
+				</li>
+			</ul>
+			</p>
+		</p>
+
+		</div>
+		<aside>
+			<div id="links"></div>
+			<div id="tagcloud">
+				<p>
+					<span style="font-size: 1.3em"><a href="#">cors</a></span>
+					<span style="font-size: .9em"><a href="#">跨域访问</a></span>
+					<span style="font-size: 1.6em"><a href="#">laravel</a></span>
+					<span style="font-size: 1.4em"><a href="#">apache</a></span>
+				</p>
+			</div>
+		</aside>
+
+		<footer>
+			<p><strong>As A Learner</strong></p>
+		</footer>
+	</article>
+
+</body>
+</html>
